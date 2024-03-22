@@ -14,3 +14,18 @@ jobs:
         run: npm ci --silent
       - name: test
         run: npm test
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: clone repo
+        uses: actions/checkout@v3
+      - name: node setup
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - name: install dependencies
+        run: npm ci --silent
+      - name: testing
+        run: npm test
+      - name: deploy 
+        run: echo "deploying"
